@@ -11,6 +11,7 @@ class Search extends Component {
         header: ""
     }
 
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -22,7 +23,7 @@ class Search extends Component {
         API.searchBook(book)
         .then(res => { 
             this.setState({searchResults:  res.data.items})
-            console.log(this.state.searchResults)
+            //console.log(this.state.searchResults)
         })
       .catch(err => console.log(err)); 
     }
@@ -39,10 +40,25 @@ class Search extends Component {
         }
         this.setState({
             header: "Results",
-            
-        })
-        
+        })  
     };
+
+    addBook = (title, author, description, image, link) => {
+        const newBook = {
+            title: title,
+            authors: author,
+            description: description, 
+            image: image,
+            link: link
+        }
+
+        API.saveBook(newBook)
+        .then(res => {  
+            console.log(res.data)
+        })
+      .catch(err => console.log(err)); 
+        console.log(newBook)
+    }
       
 
     render() {
@@ -68,7 +84,7 @@ class Search extends Component {
                 </form>
 
                 <div>
-                    {this.state.searchResults ? ( < Card key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header}/>) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
+                    {this.state.searchResults ? ( < Card key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
                    
                 </div>
             </div>

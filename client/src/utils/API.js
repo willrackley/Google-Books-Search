@@ -5,5 +5,13 @@ const resultslimit = "&maxResults=40"
 export default {
     searchBook: function(bookData) {
         return axios.get(GOOGLEURL + bookData + resultslimit);
-    }
+    },
+
+    saveBook: function(bookData) {
+        return axios.post("/api/books", bookData);
+    },
+
+    getBooks: function() {
+        return axios.get("/api/books");
+    },
   };
