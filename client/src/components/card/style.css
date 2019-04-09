@@ -1,0 +1,7 @@
+.card {
+    overflow: scroll;
+}
+
+.card img {
+    max-width: 50%;
+}
