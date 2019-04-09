@@ -10,7 +10,8 @@ export function Card(props) {
                 <div className="card mb-3">
                     <div className="row no-gutters">
                         <div className="col-md-4">
-                            <img src={result.volumeInfo.imageLinks.smallThumbnail} className="card-img mx-auto pt-4 pb-2 d-block" alt="..."/>
+                        {!result.volumeInfo.imageLinks ? (<h3 className="p-4">No Image</h3>) : (<img src={result.volumeInfo.imageLinks.smallThumbnail} className="card-img mx-auto pt-4 pb-2 d-block" alt="..."/>)}
+                            
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">

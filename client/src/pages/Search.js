@@ -22,6 +22,7 @@ class Search extends Component {
         API.searchBook(book)
         .then(res => { 
             this.setState({searchResults:  res.data.items})
+            console.log(this.state.searchResults)
         })
       .catch(err => console.log(err)); 
     }
@@ -40,6 +41,7 @@ class Search extends Component {
             header: "Results",
             
         })
+        
     };
       
 
@@ -66,7 +68,8 @@ class Search extends Component {
                 </form>
 
                 <div>
-                    < Card key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header}/>
+                    {this.state.searchResults ? ( < Card key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header}/>) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
+                   
                 </div>
             </div>
         )
