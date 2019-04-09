@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, FormBtn} from "../components/form";
-import { Card} from "../components/card";
+import { SearchCard} from "../components/searchCard";
 import API from "../utils/API";
 
 class Search extends Component {
@@ -64,7 +64,7 @@ class Search extends Component {
     render() {
         return (
             <div className="container">
-                <h3 className="my-3">Find a book</h3>
+                <h3 className="mt-5 mb-3">Find a book</h3>
                 <form>
                 <Input
                 value={this.state.searchInput}
@@ -84,7 +84,7 @@ class Search extends Component {
                 </form>
 
                 <div>
-                    {this.state.searchResults ? ( < Card key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
+                    {this.state.searchResults ? ( < SearchCard key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
                    
                 </div>
             </div>

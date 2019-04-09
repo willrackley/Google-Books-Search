@@ -1,5 +1,5 @@
 const db = require("../models");
-//Apikey=AIzaSyBu8O3p6ZlO4fKT3g0tBqW6v6-cywM_GtI
+
 // Defining methods for the booksController
 module.exports = {
   

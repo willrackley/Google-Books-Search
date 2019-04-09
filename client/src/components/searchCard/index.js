@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export function Card(props) {
+export function SearchCard(props) {
   return (
     <ul className="list-group ">
     <h3 className="mt-5">{props.header}</h3>
