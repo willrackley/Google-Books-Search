@@ -14,7 +14,6 @@ class Search extends Component {
         saveBtnText: "SAVE BOOK"
     }
 
-
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -34,11 +33,7 @@ class Search extends Component {
         event.preventDefault();
         
         if (this.state.searchInput) {
-            console.log(`Input: ${this.state.searchInput}`);
-         
             this.searchBook(this.state.searchInput);
-
-
         } else {
             console.log('error')
         }
@@ -47,8 +42,9 @@ class Search extends Component {
         })  
     };
 
-    addBook = (title, author, description, image, link) => {
+    addBook = (id, title, author, description, image, link) => {
         const newBook = {
+            apiId: id,
             title: title,
             authors: author,
             description: description, 
@@ -58,13 +54,10 @@ class Search extends Component {
 
         API.saveBook(newBook)
         .then(res => {  
-            console.log(res.data)
         })
       . catch(err => console.log(err)); 
-        console.log(newBook)
     }
       
-
     render() {
         return (
             <div>
