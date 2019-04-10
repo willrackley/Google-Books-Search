@@ -5,3 +5,7 @@
 .card img {
     max-width: 50%;
 }
+
+.list-group-item {
+    background: #eaffe3;
+}

@@ -3,10 +3,10 @@ import "./style.css";
 
 export function SearchCard(props) {
   return (
-    <ul className="list-group ">
-    <h3 className="mt-5">{props.header}</h3>
+    <div>
+    <h3 className="mt-5 text-dark">{props.header}</h3>
         {props.results.map(result => (
-            <li className="list-group-item mb-3 bg-primary rounded" key={result.id}>
+            <li className="list-group-item mb-3 pt-4 rounded" key={result.id}>
                 <div className="card mb-3">
                     <div className="row no-gutters">
                         <div className="col-md-4">
@@ -24,13 +24,13 @@ export function SearchCard(props) {
                     <div className="row no-gutters text-center">
                         <div className="col-12">
                         {!result.volumeInfo.imageLinks ? (<div className="card-footer text-muted">
-                            <div onClick={() => props.addBook(result.volumeInfo.title,  result.volumeInfo.authors, result.volumeInfo.description,  "no image", result.volumeInfo.previewLink)}>
+                            <button className="btn btn-secondary" onClick={() => props.addBook(result.volumeInfo.title,  result.volumeInfo.authors, result.volumeInfo.description,  "no image", result.volumeInfo.previewLink)}>
                                 <i className="far fa-save"></i> SAVE BOOK
-                            </div>
+                            </button>
                         </div>) : (<div className="card-footer text-muted">
-                            <div onClick={() => props.addBook(result.volumeInfo.title,  result.volumeInfo.authors, result.volumeInfo.description, result.volumeInfo.imageLinks.smallThumbnail || "no image",result.volumeInfo.previewLink)}>
+                            <button className="btn btn-success" onClick={() => props.addBook(result.volumeInfo.title,  result.volumeInfo.authors, result.volumeInfo.description, result.volumeInfo.imageLinks.smallThumbnail || "no image",result.volumeInfo.previewLink)}>
                                 <i className="far fa-save"></i> SAVE BOOK
-                            </div>
+                            </button>
                         </div>)}
                         
                         
@@ -39,7 +39,7 @@ export function SearchCard(props) {
                 </div>
             </li>
         ))}
-    </ul>
+    </div>
   );
 }
 
