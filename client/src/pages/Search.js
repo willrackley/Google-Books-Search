@@ -84,7 +84,7 @@ class Search extends Component {
                 </div>
             </Jumbotron>
 
-                <div className="container">
+                <div className="container mb-5">
                     <List>
                         {this.state.searchResults ? ( < SearchCard key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} btnText={this.state.saveBtnText} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
                     </List>  

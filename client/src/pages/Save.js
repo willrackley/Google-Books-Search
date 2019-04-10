@@ -30,7 +30,7 @@ class Save extends Component {
 
       render() {
         return (
-            <div className="container">
+            <div className="container mb-5">
                 <h3 className="mt-5 mb-3 savedHeader">Saved Books</h3>
 
                 <div>
