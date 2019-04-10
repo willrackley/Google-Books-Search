@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 // This file exports the Input and FormBtn components
 
@@ -12,7 +13,7 @@ export function Input(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} className="btn btn-success mt-2">
+    <button {...props} className="btn formBtn mt-2 text-white">
       {props.children}
     </button>
   );

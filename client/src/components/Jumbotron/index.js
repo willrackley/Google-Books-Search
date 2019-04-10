@@ -3,7 +3,7 @@ import "./style.css"
 
 export function Jumbotron({ children }) {
   return (
-    <div className="jumbotron mt-4">
+    <div className="jumbotron">
       {children}
     </div>
   );

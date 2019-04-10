@@ -1,9 +1,9 @@
 import React from "react";
-//import "./style.css";
+import "./style.css";
 
 export function SaveCard(props) {
   return (
-        <wrapper>
+        <div>
             {props.savedBooks.map(books => (
                 <li className="list-group-item mb-3 rounded" key={books._id}>
                     <div className="card mb-3">
@@ -23,7 +23,7 @@ export function SaveCard(props) {
                             <div className="col-12">
                                 <div className="card-footer text-muted">
                                     <button onClick={() => props.deleteBooks(books._id)} className="btn btn-primary">
-                                        <i className="far fa-save"></i> DELETE BOOK
+                                    <i className="fas fa-trash-alt"></i> DELETE BOOK
                                     </button>
                                 </div>
                             </div>
@@ -31,6 +31,6 @@ export function SaveCard(props) {
                     </div>
                 </li>
             ))}
-        </wrapper>
+        </div>
     );
 }

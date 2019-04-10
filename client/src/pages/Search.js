@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input, FormBtn } from "../components/Form";
 import { SearchCard } from "../components/SearchCard";
 import { List } from "../components/List";
+import {Jumbotron} from "../components/Jumbotron";
 import API from "../utils/API";
 
 class Search extends Component {
@@ -9,7 +10,8 @@ class Search extends Component {
     state = {
         searchInput: "",
         searchResults: [],
-        header: ""
+        header: "",
+        saveBtnText: "SAVE BOOK"
     }
 
 
@@ -24,7 +26,6 @@ class Search extends Component {
         API.searchBook(book)
         .then(res => { 
             this.setState({searchResults:  res.data.items})
-            //console.log(this.state.searchResults)
         })
       .catch(err => console.log(err)); 
     }
@@ -33,9 +34,11 @@ class Search extends Component {
         event.preventDefault();
         
         if (this.state.searchInput) {
-         console.log(`Input: ${this.state.searchInput}`);
+            console.log(`Input: ${this.state.searchInput}`);
          
-        this.searchBook(this.state.searchInput);
+            this.searchBook(this.state.searchInput);
+
+
         } else {
             console.log('error')
         }
@@ -57,39 +60,41 @@ class Search extends Component {
         .then(res => {  
             console.log(res.data)
         })
-      .catch(err => console.log(err)); 
+      . catch(err => console.log(err)); 
         console.log(newBook)
     }
       
 
     render() {
         return (
-            <div className="container">
-                <h3 className="mt-5 mb-3">Find a book</h3>
-                <form>
-                <Input
-                value={this.state.searchInput}
-                onChange={this.handleInputChange}
-                name="searchInput"
-                placeholder=""
-                />
-                
-                <div>
-                    <FormBtn
-                    disabled={!(this.state.searchInput)}
-                    onClick={this.handleFormSubmit}
-                    >
-                    Submit
-                    </FormBtn>
-                </div>
-                </form>
-
-                <div>
-                    <List>
-                        {this.state.searchResults ? ( < SearchCard key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
-                    </List>
+            <div>
+            <Jumbotron>
+                <div className="container">
+                    <h3 className="mt-5 mb-3 searchHeader text-white"> <i className="fas fa-search"></i> Find Books</h3>
+                    <form>
+                    <Input
+                    value={this.state.searchInput}
+                    onChange={this.handleInputChange}
+                    name="searchInput"
+                    placeholder=""
+                    />
                     
-                   
+                    <div>
+                        <FormBtn
+                        disabled={!(this.state.searchInput)}
+                        onClick={this.handleFormSubmit}
+                        >
+                        Submit
+                        </FormBtn>
+                    </div>
+                    </form>
+                </div>
+            </Jumbotron>
+
+                <div className="container">
+                    <List>
+                        {this.state.searchResults ? ( < SearchCard key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} btnText={this.state.saveBtnText} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
+                    </List>  
                 </div>
             </div>
         )

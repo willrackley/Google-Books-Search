@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("../../images/booksBackground.png");
+    background-image: url("../../images/booksBg.png");
     background-size: cover;
-    min-height: 400px;
+    min-height: 500px;
   }

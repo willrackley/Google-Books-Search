@@ -1,12 +1,12 @@
 import React from "react";
-
+import "./style.css";
 function Nav() {
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className="navbar navbar-expand-lg">
       <div className="container">
           <a className="navbar-brand" href="/">
-            Google Book Search
+          <i className="fab fa-google"></i> Book Search
           </a>
           <div className="navbar-nav">
           <a className="nav-link" href="/search">

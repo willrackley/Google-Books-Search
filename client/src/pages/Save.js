@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import {SaveCard} from "../components/SaveCard";
 import { List } from "../components/List";
+import "../App.css";
 
 class Save extends Component {
     state = {
@@ -30,7 +31,7 @@ class Save extends Component {
       render() {
         return (
             <div className="container">
-                <h3 className="mt-5 mb-3">Saved Books</h3>
+                <h3 className="mt-5 mb-3 savedHeader">Saved Books</h3>
 
                 <div>
                     <List>
