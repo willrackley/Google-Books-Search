@@ -9,7 +9,7 @@ nav {
 }
 
 .navbar-brand {
-    color: #6b80c2;
+    color: #6b80c2 !important;
     font-size: 30px;
 }
 
@@ -18,9 +18,13 @@ nav {
 }
 
 .nav-link {
-    color: #4769d7;
+    color: #828282 !important;
 }
 
-.nav-link:hover {
-    color: #2e4ab8;
+nav .nav-link:hover {
+    color: #3e3e3e !important;
+}
+
+.navbar-toggler-icon {
+    color: #4769d7;
 }
