@@ -2,3 +2,11 @@ footer {
     border-top: 2px solid #bbbbbb;
     color: #374c91;
 }
+
+.socialLinks .fab {
+    font-size: 28px;
+}
+
+.socialLinks .fab:hover {
+    color: #6b80c2;
+}
