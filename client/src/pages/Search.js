@@ -21,6 +21,7 @@ class Search extends Component {
         });
     };
 
+    //searches google api using the form info
     searchBook = (book) => {
         API.searchBook(book)
         .then(res => { 
