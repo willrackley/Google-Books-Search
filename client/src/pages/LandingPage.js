@@ -18,7 +18,6 @@ class LandingPage extends Component {
                             <button className="btn m-3 jbBtn"><i className="fas fa-book-reader"></i> View Saved Books</button>
                         </Link>
                     </div>
-                     
                 </Jumbotron>
            </div>
         )

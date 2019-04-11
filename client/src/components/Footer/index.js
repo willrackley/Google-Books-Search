@@ -1,8 +1,6 @@
 import React from "react";
 import "./style.css";
 
-// This file exports the Input and FormBtn components
-
 export default function Footer(props) {
   return (
     <footer className="container-fluid">

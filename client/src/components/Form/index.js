@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 
-// This file exports the Input and FormBtn components
 
 export function Input(props) {
   return (
@@ -21,11 +20,11 @@ export function FormBtn(props) {
 
 export function RadioBtn(props) {
     return (
-        <div className="form-check form-check-inline ml-1">
-            <input className="form-check-input" type="radio" {...props}/>
-            <label className="form-check-label">
-            {props.children}
-            </label>
-        </div>
+      <div className="form-check form-check-inline ml-1">
+          <input className="form-check-input" type="radio" {...props}/>
+          <label className="form-check-label">
+          {props.children}
+          </label>
+      </div>
     );
 }

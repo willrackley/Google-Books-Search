@@ -11,17 +11,16 @@ class Save extends Component {
 
     componentDidMount() {
         this.grabBooks();
-      }
-    
+    }
+    //Gets the saved books that are stored in the database and sets it to the savedbook in state
     grabBooks = () => {
         API.getBooks()
             .then(res => {
             this.setState({ savedBooks: res.data })
-            console.log(this.state.savedBooks)
             })
             .catch(err => console.log(err));
     };
-
+    //delets the saved book from the database
     deleteBooks = id => {
         API.deleteBook(id)
         .then(res => this.grabBooks())

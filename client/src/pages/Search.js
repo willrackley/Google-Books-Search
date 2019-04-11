@@ -11,7 +11,6 @@ class Search extends Component {
         searchInput: "",
         searchResults: [],
         header: "",
-        saveBtnText: "SAVE BOOK"
     }
 
     handleInputChange = event => {
@@ -52,7 +51,7 @@ class Search extends Component {
             image: image,
             link: link
         }
-
+        //this saves the book info to the mongoose database
         API.saveBook(newBook)
         .then(res => {  
         })
@@ -87,7 +86,7 @@ class Search extends Component {
 
                 <div className="container mb-5">
                     <List>
-                        {this.state.searchResults ? ( < SearchCard key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} btnText={this.state.saveBtnText} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
+                        {this.state.searchResults ? ( < SearchCard key={this.state.searchResults.id} results={this.state.searchResults} header={this.state.header} addBook={this.addBook} />) : ( <h3 className="mt-5">Sorry, your search did not match any documents.</h3>)}
                     </List>  
                 </div>
             </div>
