@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 class LandingPage extends Component {
-    state = {
-        booksBackground
-    }
 
     render() {
         return (
