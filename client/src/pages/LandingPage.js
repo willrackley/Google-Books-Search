@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {Jumbotron} from "../components/Jumbotron";
-import booksBackground from "../images/booksBackground.png";
 import { Link } from "react-router-dom";
 import "../App.css";
 

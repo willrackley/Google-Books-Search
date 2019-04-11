@@ -28,13 +28,15 @@ export function SearchCard(props) {
                             <Popup trigger={<button className="btn btn-secondary">
                                 <i className="far fa-save"></i> SAVE BOOK
                             </button>} onOpen={() => props.addBook(result.id,result.volumeInfo.title,  result.volumeInfo.authors, result.volumeInfo.description,  "no image", result.volumeInfo.previewLink) } position="right center">
-                                <div>{`${result.volumeInfo.title} has been saved`}</div>
+                            <div>{`SAVED:`}</div>
+                                <div className="font-weight-bold">{result.volumeInfo.title}</div>
                             </Popup>
                         </div>) : (<div className="card-footer text-muted">
                             <Popup trigger={<button className="btn btn-success">
                                 <i className="far fa-save"></i> SAVE BOOK
-                            </button> } onOpen={() => props.addBook(result.id,result.volumeInfo.title,  result.volumeInfo.authors, result.volumeInfo.description,  result.volumeInfo.imageLinks.smallThumbnail, result.volumeInfo.previewLink)} position="right center">
-                                <div>{`${result.volumeInfo.title} has been saved`}</div>
+                            </button> } onOpen={() => props.addBook(result.id,result.volumeInfo.title,  result.volumeInfo.authors, result.volumeInfo.description,  result.volumeInfo.imageLinks.smallThumbnail, result.volumeInfo.previewLink)} position="top right">
+                                <div>{`SAVED:`}</div>
+                                <div className="font-weight-bold">{result.volumeInfo.title}</div>
                             </Popup>
                         </div>)}
                         
