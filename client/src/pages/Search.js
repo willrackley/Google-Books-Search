@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Input } from "../components/Form";
-import { FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 import { SearchCard } from "../components/SearchCard";
 import { List } from "../components/List";
 import {Jumbotron} from "../components/Jumbotron";
