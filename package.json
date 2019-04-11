@@ -27,10 +27,11 @@
   "bugs": {
     "url": "https://github.com/willrackley/Google-Books-Search/issues"
   },
-  "homepage": "https://github.com/willrackley/Google-Books-Search#readme",
+  "homepage": "https://willrackley.github.io/Google-Books-Search/",
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.4",
+    "gh-pages": "^2.0.1",
     "google-books-search": "^0.3.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.4.22"
