@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/willrackley/Google-Books-Search/issues"
   },
-  "homepage": "https://willrackley.github.io/Google-Books-Search/",
+  "homepage": "https://vast-ravine-83290.herokuapp.com//",
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.4",
